@@ -1,4 +1,4 @@
-FROM inseefrlab/r4.1.1-spark3.2.0
+FROM inseefrlab/rstudio:r4.1.1-spark3.2.0
 
 # Learnr
 RUN R -e "install.packages(c('learnr'))"
