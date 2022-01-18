@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learnr-sparkr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: learnr-sparkr
+  template:
+    metadata:
+      labels:
+        app: learnr-sparkr
+    spec:
+      containers:
+        - name: learnr-sparkr
+          image: git-registry.lab.sspcloud.fr/avouacr/learnr-sparkr:latest
