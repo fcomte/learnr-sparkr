@@ -35,7 +35,6 @@ sparkR.session(master = "k8s://https://kubernetes.default.svc:443",
                list(spark.kubernetes.container.image=Sys.getenv("IMAGE_NAME"), 
                     spark.kubernetes.authenticate.driver.serviceAccountName=Sys.getenv("KUBERNETES_SERVICE_ACCOUNT"),
                     spark.kubernetes.driver.pod.name=Sys.getenv("KUBERNETES_POD_NAME"),
-                    spark.kubernetes.namespace="user-tm8enk",
                     # config pour allocation dynamique
                     spark.dynamicAllocation.enabled="true",
                     spark.dynamicAllocation.initialExecutors="1",
