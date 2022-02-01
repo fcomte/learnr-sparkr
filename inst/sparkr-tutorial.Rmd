@@ -2,8 +2,8 @@
 title: "SparkR"
 output: 
   learnr::tutorial:
-  progressive: true
-allow_skip: false
+    progressive: true
+    allow_skip: true
 runtime: shiny_prerendered
 ---
 
