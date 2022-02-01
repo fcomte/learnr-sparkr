@@ -7,11 +7,6 @@ output:
 runtime: shiny_prerendered
 ---
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## Objectifs
 
 Cette formation va reprendre les exemples des tutoriaux pyspark sur parquet et hivemetastore.
@@ -48,10 +43,6 @@ sparkR.session(master = "k8s://https://kubernetes.default.svc:443",
 
 On peut vérifier la présence de notre executeur spark R
 
-
-```{bash get_pods, echo=TRUE}
-kubectl get pods -l spark-role=executor
-```
 ## accès à un fichier csv
 
 Attention la lecture d'un fichier avec inférence du schéma est couteuse car l'ensemble du fichier va etre lu pour en déduire le schéma.
@@ -105,7 +96,7 @@ J'ai les deux tables temporaires csv et parquet que nous avons référencé manu
 Si vous n'avez aucune table je vous propose la requête de création de a table.
 
 
-```{r create_table, eval=FALSE, include=FALSE}
+```{r create_table, , exercise=TRUE}
 sql("CREATE EXTERNAL TABLE sirene2 (siren int,nic int,siret bigint,dateFin string,dateDebut string,etatAdministratifEtablissement string,changementEtatAdministratifEtablissement boolean,enseigne1Etablissement string,enseigne2Etablissement string,enseigne3Etablissement string,changementEnseigneEtablissement boolean,denominationUsuelleEtablissement string,changementDenominationUsuelleEtablissement boolean,activitePrincipaleEtablissement string,nomenclatureActivitePrincipaleEtablissement string,changementActivitePrincipaleEtablissement string,caractereEmployeurEtablissement string,changementCaractereEmployeurEtablissement string ) STORED as parquet LOCATION 's3a://projet-spark-lab/diffusion/formation/data/sirene-10-partitions.parquet'")
 ```
 ```{r show_tables2, exercise=TRUE}
