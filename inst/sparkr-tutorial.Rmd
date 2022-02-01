@@ -21,7 +21,7 @@ Je prefère présenter la lirairie d'accès proposer par le projet Apache Spark.
 
 Lors d'une phase de developpement sur donnée volumineuse, il est interessant d'utiliser une configuration dynamique du nombre d'executeurs afin de relacher les ressources lorsque l'on execute pas de taches.
 
-```{r build_context, exercise=TRUE}
+```{r build_context, exercise=TRUE, exercise.eval = FALSE}
 library(SparkR)
 # Initialize SparkSession
 sparkR.session(master = "k8s://https://kubernetes.default.svc:443",
